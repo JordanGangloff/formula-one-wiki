@@ -10,9 +10,57 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_17_191051) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_19_163312) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cars", force: :cascade do |t|
+    t.string "name"
+    t.integer "hpp"
+    t.integer "weight"
+    t.integer "number"
+    t.string "power_unit"
+    t.string "photo"
+    t.bigint "team_id", null: false
+    t.bigint "pilot_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pilot_id"], name: "index_cars_on_pilot_id"
+    t.index ["team_id"], name: "index_cars_on_team_id"
+  end
+
+  create_table "components", force: :cascade do |t|
+    t.string "role"
+    t.string "name"
+    t.string "description"
+    t.string "photo"
+    t.string "price"
+    t.bigint "car_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["car_id"], name: "index_components_on_car_id"
+  end
+
+  create_table "pilots", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "age"
+    t.integer "number"
+    t.string "photo"
+    t.bigint "team_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["team_id"], name: "index_pilots_on_team_id"
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string "name"
+    t.integer "rank"
+    t.string "boss"
+    t.string "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,4 +74,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_17_191051) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "cars", "pilots"
+  add_foreign_key "cars", "teams"
+  add_foreign_key "components", "cars"
+  add_foreign_key "pilots", "teams"
 end
