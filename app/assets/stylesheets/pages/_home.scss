@@ -1,1 +1,25 @@
 // Specific CSS for your home-page
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-around;
+}
+
+.home-card {
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+  background-repeat: no-repeat;
+}
+
+.teams-home {
+  background-image: url("https://flashinfoauto.com/wp-content/uploads/2022/02/Mercedes-M298872-b.jpg");
+}
+
+.pilots-home {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9NkcpD9DGf7S1FxpKxtRWDW9Xv6E7CbXG_9XbbHh6BZdS0NKz");
+}
+
+.cars-home {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/55/2022_Emilia_Romagna_GP_-_Mercedes-AMG_F1_W13_E_Performance_of_Lewis_Hamilton.jpg");
+}
