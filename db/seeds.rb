@@ -5,6 +5,7 @@ Component.destroy_all
 Car.destroy_all
 Pilot.destroy_all
 Team.destroy_all
+User.destroy_all
 
 puts 'Everything has been destroyed'
 puts 'Now creating teams'
@@ -77,35 +78,30 @@ pilot102 = Pilot.create!(team: team10, first_name: 'Nicholas', last_name: 'Latif
 puts 'Pilots successfully created'
 puts 'Now creating cars'
 
-car11 = Car.create!(name: 'RB18', weight: 798, power_unit: 'Red Bull Powertrains', pilot: pilot11, team: team1, number: pilot11.number)
-car12 = Car.create!(name: 'RB18', weight: 798, power_unit: 'Red Bull Powertrains', pilot: pilot12, team: team1, number: pilot12.number)
-
-car21 = Car.create!(name: 'F1-75', weight: 795, power_unit: 'Ferrari', pilot: pilot21, team: team2, number: pilot21.number)
-car22 = Car.create!(name: 'F1-75', weight: 795, power_unit: 'Ferrari', pilot: pilot22, team: team2, number: pilot22.number)
-
-car31 = Car.create!(name: 'W13', weight: 795, power_unit: 'Mercedes', pilot: pilot31, team: team3, number: pilot31.number)
-car32 = Car.create!(name: 'W13', weight: 795, power_unit: 'Mercedes', pilot: pilot32, team: team3, number: pilot32.number)
-
-car41 = Car.create!(name: 'A522', weight: 795, power_unit: 'Renault', pilot: pilot41, team: team4, number: pilot41.number)
-car42 = Car.create!(name: 'A522', weight: 795, power_unit: 'Renault', pilot: pilot42, team: team4, number: pilot42.number)
-
-car51 = Car.create!(name: 'MCL36', weight: 795, power_unit: 'Mercedes', pilot: pilot51, team: team5, number: pilot51.number)
-car52 = Car.create!(name: 'MCL36', weight: 795, power_unit: 'Mercedes', pilot: pilot52, team: team5, number: pilot52.number)
-
-car61 = Car.create!(name: 'C42', weight: 795, power_unit: 'Ferrari', pilot: pilot61, team: team6, number: pilot61.number)
-car62 = Car.create!(name: 'C42', weight: 795, power_unit: 'Ferrari', pilot: pilot62, team: team6, number: pilot62.number)
-
-car71 = Car.create!(name: 'VF-22', weight: 795, power_unit: 'Ferrari', pilot: pilot71, team: team7, number: pilot71.number)
-car72 = Car.create!(name: 'VF-22', weight: 795, power_unit: 'Ferrari', pilot: pilot72, team: team7, number: pilot72.number)
-
-car81 = Car.create!(name: 'AT03', weight: 795, power_unit: 'Red Bull Powertrains', pilot: pilot81, team: team8, number: pilot81.number)
-car82 = Car.create!(name: 'AT03', weight: 795, power_unit: 'Red Bull Powertrains', pilot: pilot82, team: team8, number: pilot82.number)
-
-car91 = Car.create!(name: 'AMR22', weight: 795, power_unit: 'Mercedes', pilot: pilot91, team: team9, number: pilot91.number)
-car92 = Car.create!(name: 'AMR22', weight: 795, power_unit: 'Mercedes', pilot: pilot92, team: team9, number: pilot92.number)
-
-car101 = Car.create!(name: 'FW44', weight: 795, power_unit: 'Mercedes', pilot: pilot101, team: team10, number: pilot101.number)
-car102 = Car.create!(name: 'FW44', weight: 795, power_unit: 'Mercedes', pilot: pilot102, team: team10, number: pilot102.number)
+car11 = Car.create!(name: 'RB18', weight: 798, power_unit: 'Red Bull Powertrains',
+                    pilot: pilot11, team: team1, number: pilot11.number)
+Car.create!(name: 'RB18', weight: 798, power_unit: 'Red Bull Powertrains',
+            pilot: pilot12, team: team1, number: pilot12.number)
+Car.create!(name: 'F1-75', weight: 795, power_unit: 'Ferrari', pilot: pilot21, team: team2, number: pilot21.number)
+Car.create!(name: 'F1-75', weight: 795, power_unit: 'Ferrari', pilot: pilot22, team: team2, number: pilot22.number)
+Car.create!(name: 'W13', weight: 795, power_unit: 'Mercedes', pilot: pilot31, team: team3, number: pilot31.number)
+Car.create!(name: 'W13', weight: 795, power_unit: 'Mercedes', pilot: pilot32, team: team3, number: pilot32.number)
+Car.create!(name: 'A522', weight: 795, power_unit: 'Renault', pilot: pilot41, team: team4, number: pilot41.number)
+Car.create!(name: 'A522', weight: 795, power_unit: 'Renault', pilot: pilot42, team: team4, number: pilot42.number)
+Car.create!(name: 'MCL36', weight: 795, power_unit: 'Mercedes', pilot: pilot51, team: team5, number: pilot51.number)
+Car.create!(name: 'MCL36', weight: 795, power_unit: 'Mercedes', pilot: pilot52, team: team5, number: pilot52.number)
+Car.create!(name: 'C42', weight: 795, power_unit: 'Ferrari', pilot: pilot61, team: team6, number: pilot61.number)
+Car.create!(name: 'C42', weight: 795, power_unit: 'Ferrari', pilot: pilot62, team: team6, number: pilot62.number)
+Car.create!(name: 'VF-22', weight: 795, power_unit: 'Ferrari', pilot: pilot71, team: team7, number: pilot71.number)
+Car.create!(name: 'VF-22', weight: 795, power_unit: 'Ferrari', pilot: pilot72, team: team7, number: pilot72.number)
+Car.create!(name: 'AT03', weight: 795, power_unit: 'Red Bull Powertrains',
+            pilot: pilot81, team: team8, number: pilot81.number)
+Car.create!(name: 'AT03', weight: 795, power_unit: 'Red Bull Powertrains',
+            pilot: pilot82, team: team8, number: pilot82.number)
+Car.create!(name: 'AMR22', weight: 795, power_unit: 'Mercedes', pilot: pilot91, team: team9, number: pilot91.number)
+Car.create!(name: 'AMR22', weight: 795, power_unit: 'Mercedes', pilot: pilot92, team: team9, number: pilot92.number)
+Car.create!(name: 'FW44', weight: 795, power_unit: 'Mercedes', pilot: pilot101, team: team10, number: pilot101.number)
+Car.create!(name: 'FW44', weight: 795, power_unit: 'Mercedes', pilot: pilot102, team: team10, number: pilot102.number)
 
 puts 'Cars successfully created'
 puts 'Now creating components'
@@ -115,4 +111,8 @@ Component.create!(role: 'driveability', name: 'Suspensions', description: 'Stabi
 Component.create!(role: 'Security', name: 'Halo', description: "Protection of the pilot's head", car: car11)
 
 puts 'Components successfully created'
+puts 'Now finishing the users creation'
+
+User.create!(email: 'test@test.com', password: 'azerty')
+
 puts 'Everything has been seeded, great job!'
