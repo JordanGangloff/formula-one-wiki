@@ -1,8 +1,13 @@
 // Specific CSS for your home-page
-.main-container {
+.home-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-around;
+
+  h1 {
+    color: white;
+    background-color: black;
+  }
 }
 
 .home-card {
